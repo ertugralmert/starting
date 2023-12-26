@@ -1,1 +1,22 @@
 1-1 den girdiğimizsayıya kadar olan sayıların toplamını yazdıran program
+
+package com.mert;
+
+import java.util.Scanner;
+
+public class RunnerQ1 {
+    // 1 den girdiğimizsayıya kadar olan sayıların toplamını yazdıran program
+
+    public static void main(String[] args) {
+        System.out.print("Lütfen bir sayı giriniz: ");
+
+        Scanner scanner = new Scanner(System.in);
+        int toplam = 0;
+        int sayi = scanner.nextInt();
+
+        for(int i = 1; i<=sayi; i++) {
+           toplam += i;
+        }
+        System.out.println(toplam);
+    }
+}
