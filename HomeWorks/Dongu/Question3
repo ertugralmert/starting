@@ -1,1 +1,19 @@
-Dışarıdan girilen bir sayının faktoriyelini hesaplayalım
+//Dışarıdan girilen bir sayının faktoriyelini hesaplayalım
+package com.mert;
+
+import java.util.Scanner;
+public class Runner_Question3 {
+    //Dışarıdan girilen bir sayının faktoriyelini hesaplayalım
+    public static void main(String[] args) {
+        System.out.println("Lütfen bir sayı giriniz");
+        Scanner scanner = new Scanner(System.in);
+        int sayi = scanner.nextInt();
+        int faktoriyel =1;
+        for(int i =1; i <= sayi; i++) {
+            faktoriyel = i * faktoriyel;
+        }
+        System.out.println(faktoriyel);
+
+    }
+}
+
