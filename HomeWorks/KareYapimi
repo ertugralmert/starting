@@ -1,1 +1,81 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class SwitchCase_Ornek1 {
+    public static void main(String[] args) {
+        /**
+         * Aşağıdaki şekli çiziniz
+         * çizmek istediğiniz uzunluğu giriniz: 5
+         *
+         * * * * * *
+         * * * * * *
+         * * * * * *
+         * * * * * *
+         * ------
+         * soru 2
+         * için boş kare çiz: 6  for ve if
+         *  * * * * * *
+         *  *         *
+         *  *         *
+         *  *         *
+         *  *         *
+         *  * * * * * *
+         *
+         */
+        System.out.println("Lütfen kare tipini seçiniz");
+        System.out.println("""
+                secim : 1 >>>>>>>>>>>> için dolu kare yapımı
+                secim : 2 >>>>>>>>>>>> içi boş kare yapımı
+                """);
+        int kareSecim = new Scanner(System.in).nextInt();
+
+        switch (kareSecim) {
+            case 1 :System.out.println("İçi dolu kare oluşturulacak");
+                int sayac = 0;
+
+
+                System.out.println("Karenin Uzunluğunu seçin");
+                int uzunluk = new Scanner(System.in).nextInt();
+
+                do {
+                    for (int i = 1; i <= uzunluk; i++) {
+                        System.out.print("* ");
+                    }
+                    System.out.println(" ");
+                    sayac++;
+                }while (sayac < uzunluk);
+            break;
+            case 2 : System.out.println("İçi boş kare yapılacak");
+                System.out.println("Karenin uzunluğunu seçin");
+                int iciBosKareUzunlugu = new Scanner(System.in).nextInt();
+
+                for (int i= 1; i<=iciBosKareUzunlugu; i++) {System.out.print("* ");}
+                System.out.println();
+
+                for (int i =2; i< iciBosKareUzunlugu; i++) {
+                    System.out.print("*");
+                    for (int a=2; a < iciBosKareUzunlugu; a++) {
+                        System.out.print("  ");
+                    }
+                    System.out.println(" *");
+                }
+                if (iciBosKareUzunlugu>1) {
+                    for (int i =1; i <= iciBosKareUzunlugu; i++) {
+                        System.out.print("* ");
+                    }
+                    System.out.println();
+                }
+
+            break;
+            default : System.out.print("1. veya 2. seçim yapınız");
+            break;
+
+        }
+
+
+
+
+    }
+}
 
