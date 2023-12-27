@@ -1,2 +1,33 @@
 1 den başlayarak sırayla sayıları toplayalım toplamımız 50den buyuk olana kadar programımız çalışşın
 program sonundatoplamı ve programın kaç kere çalıştıgını yazdıralım.
+
+package com.mert;
+
+import java.util.Scanner;
+
+public class Runner_Question4 {
+    // 1 den başlayarak sırayla sayıları toplayalım toplamımız
+    // 50den buyuk olana kadar programımız çalışşın
+    //program sonundatoplamı ve programın kaç kere çalıştıgını yazdıralım.
+
+    public static void main(String[] args) {
+
+        System.out.println("Program Başladı");
+        System.out.println("1'den başlayarak toplam 50 den büyük olan kadar devam edecek");
+        int toplam = 0;
+        int i = 0;
+
+        do {
+            i++;
+            toplam += i;
+            System.out.println("Toplam: " + toplam);
+
+        }while (toplam <= 50);
+        System.out.println(i + "defa program çalıştı");
+
+
+
+
+
+    }
+}
