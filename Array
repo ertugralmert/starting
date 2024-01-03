@@ -1,0 +1,58 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class ArrayDevam {
+    // kullanıcı istediği kadar sayı girsin
+    // girdiği sayıların enbüyük, en küçük ve girilen sayıların ortalaması
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        System.out.println("program started");
+        int toplam = 0;
+        double ortalama = 1;
+        int i = 0;
+
+        System.out.print("KAç tane sayı girmek istiyorsunuz?: ");
+        int adet = new Scanner(System.in).nextInt();
+        int[] array = new int[adet];
+        for (; i < adet; i++) {
+            System.out.print((i + 1) + ". sayiyi giriniz: ");
+            int sayi = new Scanner(System.in).nextInt();
+            array[i] = sayi;
+            toplam = toplam + array[i];
+
+        }
+        System.out.print("Toplam: " + toplam);
+        ortalama = toplam / i;
+        System.out.println();
+        System.out.print("Ortalama: " + ortalama);
+        System.out.println();
+        int enBuyukSayi = array[0];
+        int enKucukSayi = array[0];
+        int a = 1;
+        int b = 1;  
+
+        do{
+
+            if (enBuyukSayi<array[a]){
+                enBuyukSayi = array[a];
+            }
+            a++;
+        }while (a<adet);
+        System.out.println("En Büyük Sayı: " + enBuyukSayi);
+
+        do{
+            if (enKucukSayi>array[b]){
+                enKucukSayi = array[b];
+
+            }
+            b++;
+        }while (b<adet);
+        System.out.println("En Küçük Sayi: "+ enKucukSayi);
+
+// b değişkeni en küçük sayıyı bulmak için gerekli miydi ?
+// hepsini tek bir döngü içinde bulabilir miydim ? 
+
+    }
+}
+
