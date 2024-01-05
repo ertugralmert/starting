@@ -1,0 +1,53 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class GirilenBesSayidanBuyukKucukBulma {
+    /**
+     * Dışarıdan girilen 5 sayının asal olup olmadığını bul.
+     * Aralık 0 ile 100. 100 dahil
+     */
+// Bu alıştırmada eğer 100 den büyük sayı girersek tekrardan girmemiz için uyarı ekledim.
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        System.out.println("Program Started");
+        int i = 0;
+        int[] sayilar = new int[5];
+        do {
+            System.out.println((i+1) + ". sayıyı giriniz");
+            int sayi = new Scanner(System.in).nextInt();
+            if (sayi <= 100){
+            sayilar[i] = sayi;
+            i++;}
+            else System.out.println("Lütfen 100den küçük bir sayı giriniz");
+        }while(i<5);
+        System.out.println("****************");
+        for (  i = 0; i< sayilar.length; i++){
+        System.out.print(sayilar[i] + "-"); }
+
+        int enKucukSayi = sayilar[0];
+
+        for ( i = 1; i < sayilar.length; i++) {
+            if (enKucukSayi>sayilar[i]){
+                enKucukSayi = sayilar[i];
+            }
+        }
+        System.out.println("En Küçük Sayı: "+ enKucukSayi);
+
+        int enBuyukSayi = sayilar[0];
+        for ( i =1 ; i<sayilar.length; i++){
+            if (enBuyukSayi<sayilar[i]){
+                enBuyukSayi= sayilar[i];
+            }
+        }
+        System.out.println("************");
+        System.out.println("En Büyük Sayi: "+ enBuyukSayi);
+
+
+        System.out.println("Program Bitti");
+        System.out.println("Girilen 5 sayı tanımlandı, limit konuldu, 100 den büyük girme engellendi, en büyük ve en küçük sayılar bulundu");
+
+        
+
+    }
+}
