@@ -1,0 +1,137 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class BurcunuBul {
+    // Dışarıdan doğum günü ve ay ayrı ayrı girilecek ve sonucuna göre burç çıkacak
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        System.out.println("Program Started");
+
+        System.out.println("Lütfen Doğum Gününüzü Giriniz: ");
+        int gun = new Scanner(System.in).nextInt();
+
+        System.out.println("Lütfen Doğum Ayınızı Giriniz: ");
+        String ay = new Scanner(System.in).nextLine();
+
+        /**
+         * Koç 21 Mart Nisan
+         * ocak şubat mart nisan mayıs haziran temmuz ağustos eylül ekim kasım aralık
+         */
+        if (ay.toLowerCase().equalsIgnoreCase("ocak")) {
+            if ( gun <=21 && gun>0) {
+                System.out.println("Burcunuz Oğlak");
+            } else if (gun >21 && gun<32) {
+                System.out.println("Burcunuz Kova");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+        } else if (ay.toLowerCase().equalsIgnoreCase("şubat")){
+            if ( gun <=19 && gun>0) {
+                System.out.println("Burcunuz Kova");
+            } else if (gun >=20 && gun<32) {
+                System.out.println("Burcunuz Balık");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        } else if (ay.toLowerCase().equalsIgnoreCase("mart")){
+            if ( gun <=20 && gun>0) {
+                System.out.println("Burcunuz Balık");
+            } else if (gun >20 && gun<32) {
+                System.out.println("Burcunuz Koç");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("nisan")){
+            if ( gun <=20 && gun>0) {
+                System.out.println("Burcunuz Koç");
+            } else if (gun >20 && gun<32) {
+                System.out.println("Burcunuz Boğa");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("mayıs")){
+            if ( gun <=21 && gun>0) {
+                System.out.println("Burcunuz Boğa");
+            } else if (gun >21 && gun<32) {
+                System.out.println("Burcunuz İkizler");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("haziran")){
+            if ( gun <=22 && gun>0) {
+                System.out.println("Burcunuz İkizler");
+            } else if (gun >22 && gun<32) {
+                System.out.println("Burcunuz Yengeç");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("temmuz")){
+            if ( gun <=22 && gun>0) {
+                System.out.println("Burcunuz Yengeç");
+            } else if (gun >22 && gun<32) {
+                System.out.println("Burcunuz Aslan");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("ağustos")){
+            if ( gun <=22 && gun>0) {
+                System.out.println("Burcunuz Aslan");
+            } else if (gun >22 && gun<32) {
+                System.out.println("Burcunuz Başak");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+
+        } else if (ay.toLowerCase().equalsIgnoreCase("eylül")) {
+            if ( gun <=22 && gun>0) {
+                System.out.println("Burcunuz Başak");
+            } else if (gun >22 && gun<32) {
+                System.out.println("Burcunuz Terazi");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+
+        }else if ( (ay.toLowerCase().equalsIgnoreCase("ekim"))){
+            if ( gun <=22 && gun>0) {
+                System.out.println("Burcunuz Terazi");
+            } else if (gun >22 && gun<32) {
+                System.out.println("Burcunuz Akrep");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("kasım")){
+            if ( gun <=21 && gun>0) {
+                System.out.println("Burcunuz Akrep");
+            } else if (gun >21 && gun<32) {
+                System.out.println("Burcunuz Yay");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+
+        }else if (ay.toLowerCase().equalsIgnoreCase("aralık")){
+            if ( gun <=21 && gun>0) {
+                System.out.println("Burcunuz Yay");
+            } else if (gun >21 && gun<32) {
+                System.out.println("Burcunuz Oğlak");
+            }
+            else System.out.println("Geçersiz bir gün girdiniz");
+
+        }
+        System.out.println("Burcunuzu Öğrendiniz, Şimdi işinizin başına dönebilirsiniz :)");
+        System.out.println("Program Finish");
+        Long end = System.currentTimeMillis();
+        System.out.println(end - start);
+
+    }
+}
