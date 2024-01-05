@@ -1,0 +1,85 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class OdevYapildi {
+    public static void main(String[] args) {
+
+
+        /**
+         * İşlemi tarif ediniz...:
+         * elimde iki sayı var 5 ve 21 bu iki sayının toplamı nedir?
+         * 28 ile 97 nin çarpımı kaçtır?
+         * -----------
+         * ifadeler içinde kesin bilgiler olacak.
+         * mutlaka 2 sayı olacak ne az ne fazla
+         * 4 işlem yapılacak sadece -> toplama, çıkartma, çarpma, bölme
+         * -----------
+         */
+        boolean exit = false;
+        System.out.println(">Merhaba size nasıl yardımcı olabilirim?");
+        System.out.println("> Yapmak istediğiniz işlemi yazabilirsiniz.");
+        int sayac = 0;
+
+        do {
+            System.out.println(">Yapmak istediğiniz işlem nedir?:");
+            String komut = new Scanner(System.in).nextLine();
+            String[] sayiBul = komut.split("\\D+");
+            int s1 = 0;
+            int s2 = 0;
+            for (String sayi : sayiBul) {
+                if (!sayi.isEmpty()) {
+                    s1 = Integer.parseInt(sayiBul[1]);
+                    s2 = Integer.parseInt(sayiBul[2]);
+                }
+            }
+            if (komut.contains("top") || komut.contains("ekle") || komut.contains("fazlası") || komut.contains("toplamı")) {
+                System.out.println(s1 + s2);
+            } else if (komut.contains("çıkar") || komut.contains("fark") || komut.contains("eksilt")) {
+                System.out.println(s1 - s2);
+            } else if (komut.contains("çarp") || komut.contains("kere")) {
+                System.out.println(s1 * s2);
+            } else if (komut.contains("böl") || komut.contains("oran")) {
+                System.out.println((double) s1 / s2);
+            } else if (komut.contains("kapat") || komut.contains("çıkış") || komut.contains("behlül kaçar")) {
+                exit = true;
+            } else { System.out.println(">Geçersiz işlem!. Yapmak istediğiniz işlemi kısca söyler misiniz?>>>topla,çıkar,böl,çarp gibi");
+            sayac++;}
+            if ( sayac == 3){
+                System.out.println("> 3 defa geçersiz işlem girdiniz. Sizi işlemlere yönlendiriyorum.");
+
+                System.out.println(">Elinizdeki ilk sayıyı  girin");
+                int sayi1 = new Scanner(System.in).nextInt();
+                System.out.println(">Elinizdeki ikinci sayıyı girin");
+                int sayi2 = new Scanner(System.in).nextInt();
+                System.out.println("""
+                        1- Toplam
+                        2- Çıkarma
+                        3- Çarpma
+                        4- Bölme
+                        5- çıkış
+                        """);
+                System.out.println("> Lütfen yapmak istediğiniz 4 işlemden birini seçin");
+                int secim = new Scanner(System.in).nextInt();
+                switch (secim) {
+                    case 1:
+                        System.out.println("Toplam: " + (s1+s2));
+                        break;
+                    case 2:
+                        System.out.println("Çıkarma: "+ (s1-s2));
+                        break;
+                    case 3:
+                        System.out.println("Çarpma: " + (s1*s2));
+                        break;
+                    case 4:
+                        System.out.println("Bölme: "+ (s1/s2));
+                        break;
+                    default:
+                        System.out.println(">Geçersiz işlem. Programdan çıkıldı. Tekrar görüşmek üzere");
+                        exit = true;
+
+                }
+            }
+        } while (!exit);
+    }
+}
