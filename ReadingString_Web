@@ -1,0 +1,77 @@
+package com.mert;
+
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+
+public class Runner_Astroloji {
+    private static final String site = "https://www.elle.com.tr/astroloji/";
+
+    public static void main(String[] args) throws IOException {
+
+
+        // sağ tıkla incele de
+        /**
+         * kaynak kodları çıkar HTML şeklinde
+         *
+         */
+        System.out.println("""
+        ****************************************
+        *****        BURÇ YORUMLARI  ***********
+        ****************************************
+        1- Koç
+        2- Boğa
+        3- İkizler
+        4- Yengeç
+        5- Aslan
+        6- Başak
+        7- Terazi
+        8- Akrep
+        9- Yay
+        10- Oğlak
+        11- Kova
+        12- Balık                          
+        
+        """);
+        System.out.print("Lütfen burcunuzu seçiniz......: ");
+        int burc = new Scanner(System.in).nextInt();
+        String secilenBurc = switch (burc){
+            case 1 -> "koc";
+            case 2 -> "boga";
+            case 3 -> "ikizler";
+            case 4 -> "yengec";
+            case 5 -> "aslan";
+            case 6 -> "basak";
+            case 7 -> "terazi";
+            case 8 -> "akrep";
+            case 9 -> "yay";
+            case 10 -> "oglak";
+            case 11 -> "kova";
+            case 12 -> "balik";
+            default -> "";
+        };
+        // burada return type yaptık. switch case'nin yeni sürümü. Eski javalarda yok.
+        site.concat(secilenBurc);
+        Scanner scannerSite = new Scanner(
+                new URL(site.concat(secilenBurc)).openStream(), StandardCharsets.UTF_8
+        );
+        while(scannerSite.hasNext()) { // okunacak satır var mı ?
+            String okunanSatir = scannerSite.nextLine();
+            if (okunanSatir.contains("<p>") ) {
+                System.out.println(okunanSatir
+                        .replace("<p>", "")
+                        .replace("</p>","")
+                        .replace("<br>", "")
+                );
+                break;
+
+            }
+
+             // ilk satırı bulduğunda çık . yoksa tüm yorumlar gelir.
+        }
+        System.out.println("uygulama bitti");
+
+
+    }
+}
