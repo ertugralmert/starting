@@ -1,0 +1,27 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class MukemmelSayi {
+    /**
+     * Mükkem sayi : kendisi hariç bölenlerin toplamı kendisine eşit.
+     * Örn: 6 >> 1 + 2 + 3
+     */
+
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        System.out.println("Program Started");
+        int toplam= 0;
+        System.out.println("Lütfen bir sayı giriniz:");
+        int sayi = new Scanner(System.in).nextInt();
+
+        for ( int i = 1; i<sayi; i++) {
+            if (sayi % i == 0) {
+                toplam += i;
+            }
+
+        } if (sayi == toplam) System.out.println(sayi + " mükemmel sayıdır");
+        else System.out.println(sayi + " mükemmel sayı değildir");
+        System.out.println("Program finished");
+    }
+}
