@@ -1,0 +1,25 @@
+package com.mert;
+
+import java.util.Scanner;
+
+public class AsalSayiBul {
+    /**
+     * Girilen sayının asal olup olmadığını bul
+     */
+    public static void main(String[] args) {
+        System.out.println("Program Started");
+        System.out.println("Lütfen bir sayı giriniz:");
+        int sayi = new Scanner(System.in).nextInt();
+        int kolaylastirma = sayi /2;
+        boolean asalMi = true;
+        for (int i = 2; i<kolaylastirma; i++){
+            if (sayi % i == 0 ) {
+                asalMi = false;
+            }
+
+        }if (asalMi == true) System.out.println(sayi +" asal sayıdır");
+        else if( asalMi == false) System.out.println(sayi + " asal sayı değildir");
+        System.out.println("****************");
+        System.out.println("Program Finished");
+    }
+}
